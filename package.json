@@ -1,0 +1,59 @@
+{
+  "name": "bpmnjs-modeler",
+  "version": "0.0.1",
+  "description": "bpmn-js modeller based on jbpmsjs-exemples-modeler project",
+    "scripts": {
+        "allDev": "run-s lint buildWebDev buildNodeDev",
+        "buildNodeProd": "webpack --buildTarget node --mode production",
+        "buildNodeDev": "webpack  --buildTarget node --mode development",
+        "buildWebProd": "webpack --buildTarget web --mode production",
+        "buildWebDev": "webpack  --buildTarget web --mode development",
+        "startDev": "run-s buildWebDev && webpack-dev-server --contentBase src  --buildTarget web --mode development --open",
+        "startProd": "run-s buildWebDev buildNodeDev && cd dist/js/server.bundle.js",
+        "lint": "eslint ."
+    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wagnermarques/bpmnjs-modeler"
+  },
+  "keywords": [
+    "bpmnjs"
+  ],
+  "author": {
+    "name": "wagner@gmail.com based on Nico Rehwaldt bpmn-js-examples",
+    "url": "https://github.com/nikku"
+  },
+  "contributors": [
+    {
+      "name": "bpmn.io contributors",
+      "url": "https://github.com/bpmn-io"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^3.0.0",
+    "eslint": "^5.0.1",
+    "eslint-plugin-bpmn-io": "^0.5.3",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.3",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "bpmn-js": "^3.1.0",
+    "diagram-js": "^3.0.1",
+    "express": "^4.17.1",
+    "jquery": "^3.3.1",
+    "path": "^0.12.7"
+  }
+}

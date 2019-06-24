@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>BPMN Modeler</title>
+        <link rel="stylesheet" href="libs/bpmnjs/bpmn-js/assets/diagram-js.css" />    
+        <link rel="stylesheet" href="libs/bpmnjs/bpmn-js/assets/bpmn-font/css/bpmn-embedded.css" />
+        <link rel="stylesheet" href="css/app.css" />
+    </head>
+
+    <body>    
+        <header class="header">
+            <button type="button" 
+                    id="btnNovoDia"
+                    onclick="window.location.href='#'">Novo Diagrama</button>
+            <button type="button" id="btnAbrirDia">Abrir Diagrama</button>
+            <button type="button" id="btnSalvar">Salvar Diagrama</button>
+            <button type="button" id="btnSalvarComo">Salvar Como Diagrama</button>
+        </header>
+
+        <div class="content" id="js-drop-zone">        
+            <div class="message intro">
+                <div class="note">
+                    Arraste e solte um diagrama BPMNN aqui </br> 
+                    ou cliqui neste link para <a id="js-create-diagram" href>criar um novo diagrama</a>.
+                </div>
+            </div>
+
+            <div class="message error">
+                <div class="note">
+                    <p>Ooops, we could not display the BPMN 2.0 diagram.</p>
+                    
+                    <div class="details">
+                        <span>cause of the problem</span>
+                        <pre></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="canvas" id="js-canvas"></div>
+        </div>
+
+        <ul class="buttons">
+            <li>
+                download
+            </li>
+            <li>
+                <a id="js-download-diagram" href title="download BPMN diagram">
+                    BPMN diagram
+                </a>
+            </li>
+            <li>
+                <a id="js-download-svg" href title="download as SVG image">
+                    SVG image
+                </a>
+            </li>
+        </ul>
+        
+        <script src="js/app.bundle.js"></script>
+</html>
